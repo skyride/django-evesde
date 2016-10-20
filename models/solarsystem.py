@@ -3,8 +3,8 @@ from __future__ import unicode_literals
 from django.db import models
 
 class SolarSystem(models.Model):
-    regionID = models.ForeignKey("Region", on_delete=models.CASCADE)
-    constellationID = models.ForeignKey("Constellation", on_delete=models.CASCADE)
+    regionID = models.ForeignKey("Region", related_name="solarSystems", on_delete=models.CASCADE)
+    constellationID = models.ForeignKey("Constellation", related_name="solarSystems", on_delete=models.CASCADE)
     solarSystemID = models.IntegerField(primary_key=True)
     solarSystemName = models.CharField(max_length=100, db_index=True)
     x = models.FloatField()

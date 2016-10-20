@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 class Constellation(models.Model):
-    regionID = models.ForeignKey("Region", on_delete=models.CASCADE)
+    regionID = models.ForeignKey("Region", related_name="constellations", on_delete=models.CASCADE)
     constellationID = models.IntegerField(primary_key=True)
     constellationName = models.CharField(max_length=100, db_index=True)
     x = models.FloatField()

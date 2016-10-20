@@ -4,7 +4,7 @@ from django.db import models
 
 class InvType(models.Model):
     typeID = models.IntegerField(primary_key=True)
-    groupID = models.ForeignKey("InvGroup", on_delete=models.CASCADE)
+    groupID = models.ForeignKey("InvGroup", related_name="invTypes", on_delete=models.CASCADE)
     typeName = models.CharField(max_length=100, db_index=True, null=True)
     description = models.TextField(null=True)
     mass = models.FloatField(null=True)
@@ -14,7 +14,7 @@ class InvType(models.Model):
     raceID = models.IntegerField(null=True)
     basePrice = models.DecimalField(max_digits=19, decimal_places=4, null=True)
     published = models.NullBooleanField()
-    marketGroupID = models.ForeignKey("InvMarketGroup", null=True)
+    marketGroupID = models.ForeignKey("InvMarketGroup", related_name="invTypes", null=True)
     iconID = models.IntegerField(null=True)
     soundID = models.IntegerField(null=True)
     graphicID = models.IntegerField(null=True)

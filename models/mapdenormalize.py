@@ -20,4 +20,4 @@ class MapDenormalize(models.Model):
     orbitIndex = models.IntegerField(null=True)
 
     def __str__(self):
-        return "<MapDenormalize id=%d, name='%s', typeID=%d>" % (self.itemID, self.itemName, self.typeID)
+        return "<MapDenormalize id=%d, name='%s', typeID=%d>" % (self.itemID, self.itemName, self.typeID.typeID)
