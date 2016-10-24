@@ -30,5 +30,8 @@ class SolarSystem(models.Model):
     sunTypeID = models.IntegerField()
     securityClass = models.CharField(null=True, max_length=2)
 
+    def __unicode__(self):
+        return "%s < %s < %s" % (self.solarSystemName, self.constellationID.constellationName, self.regionID.regionName)
+
     def __str__(self):
         return "<SolarSystem id=%d, name='%s'>" % (self.solarSystemID, self.solarSystemName)

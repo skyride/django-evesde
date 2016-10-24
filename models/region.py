@@ -18,5 +18,8 @@ class Region(models.Model):
     factionID = models.IntegerField(null=True)
     radius = models.IntegerField(null=True)
 
+    def __unicode__(self):
+        return self.regionName
+
     def __str__(self):
         return "<Region id=%d, name='%s'>" % (self.regionID, self.regionName)
