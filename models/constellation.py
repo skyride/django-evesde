@@ -18,5 +18,8 @@ class Constellation(models.Model):
     factionID = models.IntegerField(null=True)
     radius = models.FloatField(null=True)
 
+    def __unicode__(self):
+        return "%s < %s" % (self.constellationName, self.regionID.regionName)
+
     def __str__(self):
         return "<Constellation id=%d, name='%s'>" % (self.constellationID, self.constellationName)

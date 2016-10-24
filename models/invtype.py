@@ -19,5 +19,8 @@ class InvType(models.Model):
     soundID = models.IntegerField(null=True)
     graphicID = models.IntegerField(null=True)
 
+    def __unicode__(self):
+        return self.typeName
+
     def __str__(self):
         return "<InvType id=%d, name='%s'>" % (self.typeID, self.typeName)

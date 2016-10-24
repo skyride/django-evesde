@@ -10,5 +10,8 @@ class InvMarketGroup(models.Model):
     iconID = models.IntegerField(null=True)
     hasTypes = models.NullBooleanField()
 
+    def __unicode__(self):
+        return self.marketGroupName
+
     def __str__(self):
         return "<InvMarketGroup id=%d, name='%s'>" % (self.marketGroupID, self.marketGroupName)

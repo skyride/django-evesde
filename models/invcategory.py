@@ -8,5 +8,8 @@ class InvCategory(models.Model):
     iconID = models.IntegerField(null=True)
     published = models.NullBooleanField()
 
+    def __unicode__(self):
+        return self.categoryName
+
     def __str__(self):
         return "<InvCategory id=%d, name='%s'>" % (self.categoryID, self.categoryName)
