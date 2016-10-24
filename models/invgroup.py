@@ -13,5 +13,10 @@ class InvGroup(models.Model):
     fittableNonSingleton = models.NullBooleanField()
     published = models.NullBooleanField()
 
+
+    def __unicode__(self):
+        return self.groupName
+
+
     def __str__(self):
         return "<InvGroup id=%d, name='%s'>" % (self.groupID, self.groupName)
